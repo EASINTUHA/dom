@@ -1,0 +1,47 @@
+/* heading portion */
+.header{  
+    background-color:lightgray;
+    width:1500px;
+    height:100px;
+    display: flex;
+    flex-direction: row;
+    gap: 800px;
+
+}
+.heading{
+display: flex;
+flex-direction: column;
+}
+/* geometric portion */
+.geometric-section{
+    background-color:whitesmoke;
+    width:1500px;
+    height:700px;
+    display: flex;
+    flex-direction: row;
+}
+.result-update-section{
+    height: 600px;
+    width: 600px;
+    background-color: bisque;
+}
+.abc{
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 600px) {
+    .geometric-section{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+
+    }
+    
+    .box-1{
+        width: 400px;
+        height: 400px;
+        
+        
+    }
+  }
+

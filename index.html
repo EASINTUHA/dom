@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genius</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body> 
+<!-- heading portion -->
+    <header class="header">
+        <div class="heading">
+        <h2>Interactive</h2>
+        <h3 style="color:grey;">Geometry Genius</h3>
+        </div>
+        <div><button onclick="openNewTab()"class="ms-6 mb-5 md-6 btn btn-primary btn-section">Blog</button></div>
+    </header>
+<!-- geometric portion -->
+    <main class="geometric-section">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 g-2">
+<!-- first card -->
+            <div class="col-md-4 box-1">
+              <div class="card text-center bg-danger-subtle">
+                <img src="images/triangle.png"style="height: 100px; width: 100px;"class="card-img-top mx-auto" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Triangle</h5>
+                  <p class="card-text">Area(A)=0.5 x b x h</p>
+                  <form>
+                    <div class="col">
+                      
+                      <div class="row">
+                        <input type="number" class="form-control"id="base"required placeholder="b">
+                      </div>
+                      <p>cm</p>
+                      <div class="row">
+                        <input type="number" class="form-control"id="height" required placeholder="h">
+                      </div>
+                      <p>cm</p>
+                    </div>
+                    <a href="#" class="btn btn-primary"onclick="calculateArea_1()"id="btn1">Calculate</a>
+                  </form>
+            
+                </div>
+              </div>
+            </div>
+<!-- second card -->
+            <div class="col-md-4 box-1">
+              <div class="card text-center">
+                <img src="images/rectangle.png"style="height: 100px; width: 100px;" class="card-img-top mx-auto" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Rectangle</h5>
+                  <p class="card-text">Area(A)=w x l</p>
+                  <form>
+                    <div class="row">
+                      <div class="col">
+                        <input type="number" class="form-control"id="width"required placeholder="w">
+                      </div>
+                      <p>cm</p>
+                      <div class="col">
+                        <input type="number" class="form-control"id="length"required placeholder="l">
+                      </div>
+                      <p>cm</p>
+                    </div>
+                    <a href="#" class="btn btn-primary"onclick="calculateArea_2()"id="btn2">Calculate</a>
+                  </form>
+                </div>
+              </div>
+            </div>
+<!-- third card -->
+            <div class="col-md-4 box-1">
+              <div class="card text-center">
+                <img src="images/parallelogram.png" style="height: 100px; width: 100px;"class="card-img-top mx-auto" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Parallelogram</h5>
+                  <p class="card-text">Area(A)=b x h</p>
+                  <h6>b = 10cm, h = 12cm</h6>
+                  <a href="#" class="btn btn-primary"onclick="calculateArea_3()"id="btn3">Calculate</a>
+                </div>
+              </div>
+            </div>
+            <!-- fourth card -->
+            <div class="col-md-4 box-1">
+              <div class="card text-center bg-info">
+                <img src="images/rhombus.png"style="height: 100px; width: 100px;"class="card-img-top mx-auto" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Rhombus</h5>
+                  <p class="card-text">Area(A)= 0.5 x d1 x d2</p>
+                  <h6>d1 = 16cm, d2 = 8cm</h6>
+                  <a href="#" class="btn btn-primary"onclick="calculateArea_4()"id="btn4">Calculate</a>
+                </div>
+              </div>
+            </div>
+<!-- fifth card -->
+            <div class="col-md-4 box-1">
+                <div class="card text-center">
+                  <img src="images/pentagon.png" style="height: 100px; width: 100px;"class="card-img-top mx-auto" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">Pentagon</h5>
+                    <p class="card-text">Area(A)=0.5 x p x b</p>
+                    <h6>p = 6cm, b = 10cm</h6>
+                    <a href="#" class="btn btn-primary"onclick="calculateArea_5()"id="btn5">Calculate</a>
+                  </div>
+                </div>
+              </div>
+<!-- sixth card -->
+              <div class="col-md-4 box-1">
+                <div class="card text-center">
+                  <img src="images/ellipse.png" style="height: 100px; width: 100px;"class="card-img-top mx-auto" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">Ellipse</h5>
+                    <p class="card-text">Area(A) = πab</p>
+                    <h6>a = 10cm, b = 4cm</h6>
+                    <a href="#" class="btn btn-primary"onclick="calculateArea_6()">Calculate</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+        
+          <div class="result-update-section box-1">
+            <div class="col-md-6">
+                <div class="card text-center">
+                    <h5 class="card-title"><u>Area Calculation</u></h5>
+                  </div>
+                  
+                  <div class="card-title">
+  
+                    <p id="result1"></p> 
+                    <p id="result2"></p>
+                    <p id="result3"></p>
+                    <p id="result4"></p>
+                    <p id="result5"></p>
+                    <p id="result6"></p>
+                    
+                    
+                  </div>
+                    
+                
+              </div>
+            </div>
+        </div>
+
+
+    </main>
+    <script>
+        // open a new html page after clicking blog button
+        function openNewTab() {
+          
+          window.open("blog.html", "_blank");
+        };
+        //each time click on any card showing different color everytime
+        var cards = document.querySelectorAll(".card");
+        cards.forEach(function(card) {
+        card.addEventListener("click", function() {
+        var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        card.style.borderColor = randomColor;
+       });
+     });
+//  area of triangle
+let clickCount=0;
+function calculateArea_1() {
+  const base = parseFloat(document.getElementById("base").value);
+  const height = parseFloat(document.getElementById("height").value);
+
+  if (isNaN(base) || isNaN(height) || base <= 0 || height <= 0) {
+    document.getElementById("result1").innerHTML = "Error: Invalid input";
+    return;
+  }
+
+  const area = (base * height) / 2;
+  clickCount++;
+  const result = (clickCount)+"."+"Triangle: " + area.toFixed(2)+"cm2";
+  document.getElementById("result1").innerHTML = result;
+
+};
+
+// area of rectangle
+function calculateArea_2() {
+  const width = parseFloat(document.getElementById("width").value);
+  const length = parseFloat(document.getElementById("length").value);
+
+  if (isNaN(width) || isNaN(length) || width <= 0 || length <= 0) {
+    document.getElementById("result2").innerHTML = "Error: Invalid input";
+    return;
+  }
+
+  const area = (width * length);
+  clickCount++;
+  const result = (clickCount)+"."+"Rectangle: " + area.toFixed(2)+"cm2";
+  document.getElementById("result2").innerHTML = result;
+};
+//area of parallelogram
+function calculateArea_3() {
+  const b = 10; // base = 10 cm
+const h = 12; // height = 12 cm
+const area = b * h;
+  clickCount++;
+  const result = (clickCount)+"."+"paralellogram: " + area.toFixed(2)+"cm2";
+  document.getElementById("result3").innerHTML = result;
+};
+// area of rhombus
+function calculateArea_4() {
+  const d1 = 16; // d1 = 16 cm
+const d2 = 8; // d2 = 8 cm
+const area = (d1 * d2) / 2;
+  clickCount++;
+  const result = (clickCount)+"."+"Rhombus: " + area.toFixed(2)+"cm2";
+  document.getElementById("result4").innerHTML = result;
+};
+// area of pentagon
+function calculateArea_5() {
+  const p = 6; // p = 6 cm
+const b = 10; // b = 10cm
+const area = (p * b) / 2;
+  clickCount++;
+  const result = (clickCount)+"."+"Pentagon: " + area.toFixed(2)+"cm2";
+  document.getElementById("result5").innerHTML = result;
+};
+// area of ecllipse
+function calculateArea_6() {
+  const pi =3.1416;
+  const a = 10; // a = 10 cm
+const b = 4; // b = 4cm
+const area = pi*a*b;
+  clickCount++;
+  const result = (clickCount)+"."+"Ecllipse: " + area.toFixed(2)+"cm2";
+  document.getElementById("result6").innerHTML = result;
+  
+};
+
+
+
+
+
+</script>
+        
+</body>
+</html>
